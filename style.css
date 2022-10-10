@@ -22,6 +22,7 @@ a {
 .degrees {
   font-size: 100px;
   font-weight: bolder;
+  color: red;
 }
 
 .city {
