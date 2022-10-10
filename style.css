@@ -1,4 +1,97 @@
+body {
+  background-image: url(media/sky.jpg);
+}
+
 h1 {
-  color: red;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-weight: bolder;
+  font-size: 65px;
+}
+
+h2 {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+a {
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+.degrees {
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+.city {
+  position: fixed;
+  top: 35px;
+  right: 45px;
+  margin-right: 375px;
+  border: 2px solid rgb(60, 60, 124);
+}
+
+.searchButton {
+  position: fixed;
+  top: 35px;
+  right: 345px;
+  padding: 3px 8px;
+  font-size: 15px;
+  background-color: rgb(60, 60, 124);
+  color: white;
+  border: none;
+}
+
+.currentButton {
+  position: fixed;
+  top: 35px;
+  right: 245px;
+  padding: 3px 8px;
+  font-size: 15px;
+  background-color: rgb(60, 60, 124);
+  color: white;
+  border: none;
+}
+
+.search {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.card-body {
   text-align: center;
+  padding-top: 15px;
+}
+
+.cardHeader {
+  height: 200px;
+}
+
+.cards {
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.card {
+  border: 2px solid rgb(60, 60, 124);
+  margin-right: 5px;
+}
+
+.temp {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.degrees {
+  position: fixed;
+  right: 460px;
+  top: 55px;
+  margin-bottom: 55px;
+}
+
+.wind {
+  position: fixed;
+  right: 560px;
+  top: 195px;
 }

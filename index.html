@@ -4,17 +4,122 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SheCodes-Git</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <title>PLUS WeekHomeWork 5</title>
+  </head>
   <body>
-    <h1>Git is awesome!</h1>
-    <form>
-      <input type="email" placeholder="Enter your email" />
-      <input type="password" value="Enter your password" />
-      <input type="submit" value="Login" />
-    </form>
-    <script src="script.js"></script>
+    <div class="container">
+      <h1 id="city"></h1>
+      <h2></h2>
+      <div class="degrees">
+        <span class="degree" id="deg">&#8451</span>
+      </div>
+      <!-- <a href="#" class="celcius" id="celcius">C |</a
+      ><a href="#" class="faren" id="faren">F</a> -->
+
+      <br />
+      <p class="wind">
+        <span id="wind">Wind km/h</span><br />
+        <span id="rain"></span> %
+      </p>
+
+      <form id="search-form">
+        <input
+          class="city"
+          type="text"
+          placeholder="City..."
+          id="search-input"
+        />
+        <button
+          type="submit"
+          class="btn btn-info searchButton"
+          value="search"
+          id="search-button"
+        >
+          Search
+        </button>       
+      </form>
+      <button
+         class="btn btn-info currentButton"
+          type=""
+          value="current"
+          id="current"
+      >
+         Current
+       </button>
+
+
+
+      <div class="row cards">
+        <div class="card col-2">
+          <div class="cardHeader">
+            <img src="media/sun.svg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Tuesday</h5>
+            <p class="card-text">Sunny</p>
+            <p class="temp">25&deg;</p>
+            <p class="card-text">Wind 9km/h1 <br />Rain 0%</p>
+          </div>
+        </div>
+
+        <div class="card col-2">
+          <div class="row cardHeader">
+            <img src="media/cloudy.svg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Wednesday</h5>
+            <p class="card-text">Cloudy</p>
+            <p class="temp">19&deg;</p>
+            <p class="card-text">Wind 25km/h1 <br />Rain 8%</p>
+          </div>
+        </div>
+
+        <div class="card col-2">
+          <div class="row cardHeader">
+            <img src="media/sun.svg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Thursday</h5>
+            <p class="card-text">Sunny</p>
+            <p class="temp">27&deg;</p>
+            <p class="card-text">Wind 8km/h1 <br />Rain 0%</p>
+          </div>
+        </div>
+
+        <div class="card col-2">
+          <div class="row cardHeader">
+            <img src="media/windy.svg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Friday</h5>
+            <p class="card-text">Wind</p>
+            <p class="temp">26&deg;</p>
+            <p class="card-text">Wind 39km/h1 <br />Rain 5%</p>
+          </div>
+        </div>
+
+        <div class="card col-2">
+          <div class="row cardHeader">
+            <img src="media/sun.svg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Saturday</h5>
+            <p class="card-text">Sunny</p>
+            <p class="temp">26&deg;</p>
+            <p class="card-text">Wind 15km/h1 <br />Rain 0%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" ;></script>
   </body>
 </html>
