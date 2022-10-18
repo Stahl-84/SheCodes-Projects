@@ -127,3 +127,5 @@ let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("Malaga");
+
+//FORECAST

@@ -72,6 +72,20 @@ li:first-letter {
   margin-top: -50px;
 }
 
+.active {
+  color: black;
+  cursor: default;
+}
+
+.off {
+  color: blue;
+  cursor: default;
+}
+
+.weather-forecast {
+  margin-top: -75px;
+}
+
 .card-body {
   text-align: center;
   padding-top: 15px;
@@ -89,16 +103,6 @@ li:first-letter {
 .card {
   border: 2px solid rgb(60, 60, 124);
   width: 170px;
-}
-
-.active {
-  color: black;
-  cursor: default;
-}
-
-.off {
-  color: blue;
-  cursor: default;
 }
 
 .link {
