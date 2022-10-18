@@ -47,11 +47,17 @@ function displayName(response) {
   let degElement = document.querySelector("#deg");
   let windElement = document.querySelector("#wind");
   let humidityElement = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.name;
-  degElement.innerHTML = Math.round(`${response.data.main.temp}`) + `&degC`;
+  degElement.innerHTML = Math.round(`${response.data.main.temp}`);
   windElement.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {

@@ -17,42 +17,57 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="city"></h1>
-      <h2></h2>
-      <div class="degrees">
-        <span class="degree" id="deg">&#8451</span>
-      </div>     
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-3">        
+              <h1 id="city"></h1>
+               <h2>//datum och tid</h2>
+            
+            <div class="weather-temp">
+                <strong class="deg" id="deg">&#8451></strong>
+                <span class="units">
+                <a href="#" id="celcius-link" class="active">&degC |</a>
+                <a href="#" id="farenheit-link" class="off">&degF</a></span>
+              </div>
+              <ul>  
+                <li id="description">Cloudy</li>    
+                <li id="wind"></li>
+                <li id="humidity"></li>
+              </ul>
+            </div>
 
-      <br />
-      <p class="wind">
-        <span id="wind"></span><br />
-        <span id="humidity"></span> 
-      </p>
-
-      <form id="search-form">
-        <input
-          class="city"
-          type="text"
-          placeholder="City..."
-          id="search-input"
-        />
-        <button
-          type="submit"
-          class="btn btn-info searchButton"
-          value="search"
-          id="search-button"
-        >
-          Search
-        </button>       
-      </form>
-      <button
-         class="btn btn-info currentButton"
-          type=""
-          value="current"
-          id="current"
-      >
-         Current
-       </button>
+            <div class="col-3">  
+              <form id="search-form" class="mb-3">
+                 <input
+                    class="city-search"
+                    type="text"
+                    placeholder="City..."
+                    id="search-input"
+                    autocomplete="off" />             
+               </form>  
+              </div>
+              <!-- <img class="icon" src="" alt="Clear" id="icon" /> -->
+              <div class="col-2">      
+                <input           
+                    type="submit"
+                    class="btn btn-info searchButton"
+                    value="search"
+                    id="search-button" />          
+              </div>
+              <div class="col-2">        
+                <button
+                    class="btn btn-info currentButton"
+                    type=""
+                    value="current"
+                    id="current">Current
+                </button>
+              </div>
+             </div>
+             
+       
+      
+        
+      
 
       <div class="row cards">
         <div class="card col-2">
@@ -63,7 +78,7 @@
             <h5 class="card-title">Tuesday</h5>
             <p class="card-text">Sunny</p>
             <p class="temp">25&deg;</p>
-            <p class="card-text">Wind 9km/h1 <br />Rain 0%</p>
+            <p class="card-text">Wind 9km/h <br />Rain 0%</p>
           </div>
         </div>
 
@@ -75,7 +90,7 @@
             <h5 class="card-title">Wednesday</h5>
             <p class="card-text">Cloudy</p>
             <p class="temp">19&deg;</p>
-            <p class="card-text">Wind 25km/h1 <br />Rain 8%</p>
+            <p class="card-text">Wind 25km/h <br />Rain 8%</p>
           </div>
         </div>
 
@@ -87,7 +102,7 @@
             <h5 class="card-title">Thursday</h5>
             <p class="card-text">Sunny</p>
             <p class="temp">27&deg;</p>
-            <p class="card-text">Wind 8km/h1 <br />Rain 0%</p>
+            <p class="card-text">Wind 8km/h <br />Rain 0%</p>
           </div>
         </div>
 
@@ -99,7 +114,7 @@
             <h5 class="card-title">Friday</h5>
             <p class="card-text">Wind</p>
             <p class="temp">26&deg;</p>
-            <p class="card-text">Wind 39km/h1 <br />Rain 5%</p>
+            <p class="card-text">Wind 39km/h <br />Rain 5%</p>
           </div>
         </div>
 
@@ -111,11 +126,11 @@
             <h5 class="card-title">Saturday</h5>
             <p class="card-text">Sunny</p>
             <p class="temp">26&deg;</p>
-            <p class="card-text">Wind 15km/h1 <br />Rain 0%</p>
+            <p class="card-text">Wind 15km/h <br />Rain 0%</p>
           </div>
         </div>
       </div>
-    </div>
+   </div>
     <script src="script.js" ;></script>
   </body>
 </html>

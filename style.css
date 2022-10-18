@@ -19,21 +19,29 @@ a {
   text-decoration: none;
   color: black;
 }
-.degrees {
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 850px;
+}
+
+.deg {
   font-size: 100px;
   font-weight: bolder;
   color: red;
 }
 
-.city {
-  position: fixed;
-  top: 35px;
-  right: 45px;
-  margin-right: 375px;
+.city-search {
+  /* position: fixed; */
+  margin-left: 200px;
+  margin-top: 85px;
   border: 2px solid rgb(60, 60, 124);
 }
 
-.searchButton {
+/* .searchButton {
   position: fixed;
   top: 35px;
   right: 345px;
@@ -42,9 +50,9 @@ a {
   background-color: rgb(60, 60, 124);
   color: white;
   border: none;
-}
+} */
 
-.currentButton {
+/* .currentButton {
   position: fixed;
   top: 35px;
   right: 245px;
@@ -53,11 +61,16 @@ a {
   background-color: rgb(60, 60, 124);
   color: white;
   border: none;
-}
+} */
 
 .search {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
 }
 
 .card-body {
@@ -76,23 +89,5 @@ a {
 
 .card {
   border: 2px solid rgb(60, 60, 124);
-  margin-right: 5px;
-}
-
-.temp {
-  font-size: 45px;
-  font-weight: bold;
-}
-
-.degrees {
-  position: fixed;
-  right: 460px;
-  top: 55px;
-  margin-bottom: 55px;
-}
-
-.wind {
-  position: fixed;
-  right: 560px;
-  top: 195px;
+  width: 170px;
 }
