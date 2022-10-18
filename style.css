@@ -90,3 +90,13 @@ li:first-letter {
   border: 2px solid rgb(60, 60, 124);
   width: 170px;
 }
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.off {
+  color: blue;
+  cursor: default;
+}
