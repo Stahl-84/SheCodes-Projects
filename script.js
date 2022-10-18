@@ -123,9 +123,49 @@ celciusLink.addEventListener("click", displayCelciusTemperature);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", handleSubmit);
+
 let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("Malaga");
 
 //FORECAST
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row"> `;
+  let days = [
+    //"Monday",
+    //"Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class=" col-2 cards">
+              <div class="card">
+                <div class="cardHeader">
+                  <img src="media/sun.svg" class="card-img-top" alt="" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">${day}</h5>
+                  <p class="card-text">Sunny</p>
+                  <p class="temp">25&deg;</p>
+                  <p class="card-text">Wind 9km/h <br />Rain 0%</p>
+                </div>
+              </div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
