@@ -31,62 +31,40 @@ let day = days[now.getDay() - 1];
 let date = now.getDate();
 let month = months[now.getMonth()];
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
 if (minutes < 10) {
-  hours = `0{minutes}`;
+  minutes = `0${minutes}`;
 }
 
 h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
 function displayName(response) {
   console.log(response.data);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#deg").innerHTML =
-    Math.round(`${response.data.main.temp}`) + `&degC`;
-  document.querySelector(
-    "#wind"
-  ).innerHTML = `Wind: ${response.data.wind.speed}km/h`;
-  document.querySelector("#rain").innerHTML = response.data.rain;
+  let cityElement = document.querySelector("#city");
+  let degElement = document.querySelector("#deg");
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
+
+  cityElement.innerHTML = response.data.name;
+  degElement.innerHTML = Math.round(`${response.data.main.temp}`) + `&degC`;
+  windElement.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 }
 
-function search(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "add35dfe5082c9006db11e86b2d079d0";
-  let city = document.querySelector("#search-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayName);
-
-  // let searchInput = document.querySelector("#search-input");
-  // let h1 = document.querySelector("h1");
-  // h1.innerHTML = `${searchInput.value}`;
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
-
-// function celcius(event) {
-//   event.preventDefault();
-//   let temp = document.querySelector("#deg");
-//   temp.innerHTML = `25&deg`;
-// }
-
-// function faren(event) {
-//   event.preventDefault();
-//   let temp = document.querySelector("#deg");
-//   temp.innerHTML = `77&deg`;
-// }
-
-// let celciusButton = document.querySelector("#celcius");
-// celciusButton.addEventListener("click", celcius);
-
-// let farenButton = document.querySelector("#faren");
-// farenButton.addEventListener("click", faren);
-function showMyPosition(position) {
-  let apiKey = "add35dfe5082c9006db11e86b2d079d0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayName);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  search(searchInputElement.value);
 }
 
 function getCurrentPosition(event) {
@@ -94,5 +72,10 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showMyPosition);
 }
 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
 let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", getCurrentPosition);
+
+search("Malaga");
