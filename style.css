@@ -12,6 +12,7 @@ h1 {
 h2 {
   font-size: 15px;
   margin-top: 20px;
+  color: black;
 }
 
 a {
@@ -24,6 +25,10 @@ ul {
   list-style: none;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
 .container {
   width: 850px;
 }
@@ -31,46 +36,40 @@ ul {
 .deg {
   font-size: 100px;
   font-weight: bolder;
-  color: red;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 .city-search {
-  /* position: fixed; */
-  margin-left: 200px;
-  margin-top: 85px;
+  width: 100%;
+  margin-top: 25px;
   border: 2px solid rgb(60, 60, 124);
 }
 
-/* .searchButton {
-  position: fixed;
-  top: 35px;
-  right: 345px;
-  padding: 3px 8px;
+.searchButton {
+  margin-top: 25px;
   font-size: 15px;
   background-color: rgb(60, 60, 124);
   color: white;
   border: none;
-} */
+}
 
-/* .currentButton {
-  position: fixed;
-  top: 35px;
-  right: 245px;
-  padding: 3px 8px;
+.currentButton {
+  margin-top: 25px;
   font-size: 15px;
-  background-color: rgb(60, 60, 124);
+  background-color: rgb(96, 96, 202);
   color: white;
   border: none;
-} */
+}
 
-.search {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.city {
+  margin-top: 5px;
 }
 
 .icon {
   width: 150px;
   height: 150px;
+  margin-top: -50px;
 }
 
 .card-body {
