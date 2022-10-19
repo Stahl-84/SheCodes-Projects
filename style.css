@@ -4,14 +4,13 @@ body {
 
 h1 {
   margin-top: 50px;
-  margin-bottom: 0;
   font-weight: bolder;
-  font-size: 65px;
+  font-size: 100px;
+  text-shadow: 2px 2px 2px white;
 }
 
 h2 {
   font-size: 15px;
-  margin-top: 20px;
   color: black;
 }
 
@@ -31,15 +30,6 @@ li:first-letter {
 
 .container {
   width: 1050px;
-}
-
-.card-title {
-  line-height: 45px;
-  font-size: 25px;
-}
-
-.card-text {
-  line-height: 15px;
 }
 
 .deg {
@@ -62,10 +52,12 @@ li:first-letter {
 
 .searchButton {
   margin-top: 25px;
+  margin-right: 5px;
   font-size: 15px;
   background-color: rgb(60, 60, 124);
   color: white;
   border: none;
+  box-shadow: 2px 2px 2px black;
 }
 
 .searchButton:hover {
@@ -79,6 +71,7 @@ li:first-letter {
   background-color: rgb(142, 182, 228);
   color: black;
   border: none;
+  box-shadow: 2px 2px 2px black;
 }
 
 .currentButton:hover {
@@ -116,10 +109,6 @@ li:first-letter {
   padding-top: 15px;
 }
 
-.cardHeader {
-  height: 200px;
-}
-
 .cards {
   justify-content: center;
   margin-top: 100px;
@@ -129,7 +118,21 @@ li:first-letter {
   margin-right: 10px;
   border: 2px solid rgb(60, 60, 124);
   background-color: rgb(142, 182, 228);
+  box-shadow: 2px 2px 2px black;
   /* width: 170px; */
+}
+
+.card-title {
+  line-height: 45px;
+  font-size: 25px;
+}
+
+.cardHeader {
+  height: 200px;
+}
+
+.card-text {
+  line-height: 15px;
 }
 
 .card-text:first-letter {
