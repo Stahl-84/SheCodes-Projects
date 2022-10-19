@@ -76,7 +76,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class=" col-2 card">
+        `<div class="col-2 noPadding">
               <div class="card">
                 <div class="cardHeader">
                   <img src="http://openweathermap.org/img/wn/${
@@ -88,10 +88,10 @@ function displayForecast(response) {
                   <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
                   <p class="card-text">${forecastDay.weather[0].description}</p>
                   <p class="temp">${Math.round(forecastDay.temp.day)}&degC</p>
-                  <p class="card-text">Wind ${Math.round(
+                  <p class="card-text">Wind: ${Math.round(
                     forecastDay.wind_speed
                   )}km/h</p>
-                  <p class="temp">Humidity ${forecastDay.humidity}%</p>
+                  <p class="temp">Humidity: ${forecastDay.humidity}%</p>
                 </div>
               </div>
       </div>`;

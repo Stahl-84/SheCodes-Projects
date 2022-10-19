@@ -30,7 +30,7 @@ li:first-letter {
 }
 
 .container {
-  width: 850px;
+  width: 950px;
 }
 
 .deg {
@@ -102,9 +102,21 @@ li:first-letter {
 
 .card {
   border: 2px solid rgb(60, 60, 124);
-  width: 170px;
+  /* width: 170px; */
+}
+
+.card-text:first-letter {
+  text-transform: capitalize;
 }
 
 .link {
   font-size: 15px;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.alignRight {
+  text-align: right;
 }
