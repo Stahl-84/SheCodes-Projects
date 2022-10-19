@@ -44,7 +44,6 @@ h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 function getForecast(coordinates) {
   let apiKey = "9b66c95801e4f42b76477efd2b4bf112";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
-  // let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayForecast);
 }
@@ -73,7 +72,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row cards"> `;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2 noPadding">
@@ -91,7 +90,7 @@ function displayForecast(response) {
                   <p class="card-text">Wind: ${Math.round(
                     forecastDay.wind_speed
                   )}km/h</p>
-                  <p class="temp">Humidity: ${forecastDay.humidity}%</p>
+                  <p class="card-text">Humidity: ${forecastDay.humidity}%</p>
                 </div>
               </div>
       </div>`;
@@ -105,6 +104,7 @@ function displayForecast(response) {
 function displayName(response) {
   let temperatureElement = document.querySelector("#deg");
   let cityElement = document.querySelector("#city");
+  let searchInputElement = document.querySelector("#search-input");
   let degElement = document.querySelector("#deg");
   let iconElement = document.querySelector("#description");
   let windElement = document.querySelector("#wind");
@@ -123,6 +123,7 @@ function displayName(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.innerHTML = response.data.weather[0].description;
+  searchInputElement.value = null;
 
   getForecast(response.data.coord);
 }

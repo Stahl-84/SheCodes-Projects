@@ -30,7 +30,16 @@ li:first-letter {
 }
 
 .container {
-  width: 950px;
+  width: 1050px;
+}
+
+.card-title {
+  line-height: 45px;
+  font-size: 25px;
+}
+
+.card-text {
+  line-height: 15px;
 }
 
 .deg {
@@ -38,6 +47,11 @@ li:first-letter {
   font-weight: bolder;
   color: white;
   text-shadow: 2px 2px 2px black;
+}
+
+.temp {
+  font-weight: bolder;
+  font-size: 35px;
 }
 
 .city-search {
@@ -54,12 +68,23 @@ li:first-letter {
   border: none;
 }
 
+.searchButton:hover {
+  background-color: rgb(142, 182, 228) !important;
+  transition: all 200ms ease-in-out;
+}
+
 .currentButton {
   margin-top: 25px;
   font-size: 15px;
-  background-color: rgb(96, 96, 202);
-  color: white;
+  background-color: rgb(142, 182, 228);
+  color: black;
   border: none;
+}
+
+.currentButton:hover {
+  background-color: rgb(60, 60, 124) !important;
+  color: white !important;
+  transition: all 200ms ease-in-out;
 }
 
 .city {
@@ -101,16 +126,14 @@ li:first-letter {
 }
 
 .card {
+  margin-right: 10px;
   border: 2px solid rgb(60, 60, 124);
+  background-color: rgb(142, 182, 228);
   /* width: 170px; */
 }
 
 .card-text:first-letter {
   text-transform: capitalize;
-}
-
-.link {
-  font-size: 15px;
 }
 
 .noPadding {
@@ -119,4 +142,19 @@ li:first-letter {
 
 .alignRight {
   text-align: right;
+}
+
+.link {
+  font-size: 15px;
+  color: black;
+}
+
+.link:hover {
+  color: black !important;
+}
+
+.author {
+  font-size: 15px;
+  color: rgb(60, 60, 124);
+  font-weight: bold;
 }
