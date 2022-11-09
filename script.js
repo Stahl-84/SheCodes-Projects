@@ -42,10 +42,12 @@ if (minutes < 10) {
 h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
 function getForecast(coordinates) {
-  let apiKey = "9b66c95801e4f42b76477efd2b4bf112";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  let apiKey = "add35dfe5082c9006db11e86b2d079d0";
+  // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
 }
 
 function formatDay(timestamp) {
@@ -65,13 +67,20 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
-  console.log(response.data.daily);
+  let forecast = response.data.list;
+  let forecastErika = [
+    forecast[0],
+    forecast[7],
+    forecast[16],
+    forecast[24],
+    forecast[32],
+  ];
+  console.log(response.data);
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row cards"> `;
-  forecast.forEach(function (forecastDay, index) {
+  forecastErika.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -86,11 +95,13 @@ function displayForecast(response) {
                 <div class="card-body">
                   <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
                   <p class="card-text">${forecastDay.weather[0].description}</p>
-                  <p class="temp">${Math.round(forecastDay.temp.day)}&degC</p>
+                  <p class="temp">${Math.round(forecastDay.main.temp)}&degC</p>
                   <p class="card-text">Wind: ${Math.round(
-                    forecastDay.wind_speed
+                    forecastDay.wind.speed
                   )}km/h</p>
-                  <p class="card-text">Humidity: ${forecastDay.humidity}%</p>
+                  <p class="card-text">Humidity: ${
+                    forecastDay.main.humidity
+                  }%</p>
                 </div>
               </div>
       </div>`;
